@@ -9,3 +9,7 @@ In terms of JavaScript functionality, I implemented:
 One challenge was ensuring the website was fully responsive across different devices. I overcame this by using flexbox, media queries, and optimizing images.
 
 I deployed the website on **GitHub Pages** by pushing the project files to a GitHub repository and enabling GitHub Pages in the repository settings for live hosting.
+
+
+link:  https://janemura.github.io/safaricom-hook-final-project-and-deployment-week-8-Janemura/
+
