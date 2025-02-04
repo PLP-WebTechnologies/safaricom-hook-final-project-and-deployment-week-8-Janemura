@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Multipage Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="javascript:void(0);" onclick="showPage('home')">Home</a></li>
+                <li><a href="javascript:void(0);" onclick="showPage('about')">About</a></li>
+                <li><a href="javascript:void(0);" onclick="showPage('contact')">Contact</a></li>
+                <li><a href="javascript:void(0);" onclick="openModal()">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Welcome to My Website!</h1>
+                <p>Explore the world of web development and discover my interactive, responsive websites.</p>
+                <button onclick="scrollToSection('about')">Learn More About Me</button>
+            </div>
+    
+            <div class="home-intro">
+                <h2>What I Do</h2>
+                <p>I specialize in creating dynamic, user-friendly websites that adapt to any device. Below are some of the key services I offer:</p>
+            </div>
+        
+            <div class="services">
+                <div class="service-card">
+                    <h3>Responsive Web Design</h3>
+                    <p>Mobile-first designs that ensure your website looks great on all devices, from desktop to mobile.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Interactive Elements</h3>
+                    <p>Adding interactivity through JavaScript to make your website more engaging and user-friendly.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Custom Web Development</h3>
+                    <p>Building websites from the ground up to suit your unique business or personal needs.</p>
+                </div>
+            </div>
+        
+            <div class="cta-section">
+                <h2>Ready to Start?</h2>
+                <p>Contact me today and let's bring your project to life!</p>
+                <button onclick="showPage('contact')">Get in Touch</button>
+            </div>
+        </section>
+        
+        <section id="about" class="about">
+            <h1>About Me</h1>
+            <p>I am a passionate web developer, focused on creating responsive and interactive websites.</p>
+
+            <div class="image-slider">
+                <div class="slides">
+                    <img src="https://picsum.photos/id/120/50/50" alt="Image 1">
+                    <img src="https://picsum.photos/id/2/50/50" alt="Image 2">
+                    <img src="https://picsum.photos/id/15/50/50" alt="Image 3">
+                </div>
+                <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="next" onclick="changeSlide(1)">&#10095;</button>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h1>Contact Me</h1>
+            <form id="contactForm">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Jane Muraya</p>
+    </footer>
+
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Image Gallery</h2>
+            <div class="gallery">
+                <img src="https://picsum.photos/id/37/100/100" alt="Gallery Image 1">
+                <img src="https://picsum.photos/id/7/100/100" alt="Gallery Image 2">
+                <img src="https://picsum.photos/id/20/100/100" alt="Gallery Image 3">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showPage(page) {
+            document.querySelectorAll('.hero, .about, .contact').forEach(function(section) {
+                section.style.display = 'none';
+            });
+            document.getElementById(page).style.display = 'block';
+        }
+
+        window.onload = function() {
+            showPage('home');
+        };
+
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function openModal() {
+            document.getElementById('galleryModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('galleryModal').style.display = 'none';
+        }
+
+        let slideIndex = 0;
+
+        function changeSlide(n) {
+            const slides = document.querySelectorAll('.image-slider .slides img');
+            slideIndex += n;
+            if (slideIndex >= slides.length) slideIndex = 0;
+            if (slideIndex < 0) slideIndex = slides.length - 1;
+            updateSlider();
+        }
+
+        function updateSlider() {
+            const slides = document.querySelectorAll('.image-slider .slides img');
+            slides.forEach((slide, index) => {
+                slide.style.display = (index === slideIndex) ? 'block' : 'none';
+            });
+        }
+
+        document.getElementById('contactForm')?.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (name && email && message) {
+                alert('Thank you for your message!');
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+    </script>
+</body>
+</html>

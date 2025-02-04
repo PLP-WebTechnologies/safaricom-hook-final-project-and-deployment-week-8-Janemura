@@ -1,0 +1,294 @@
+body {
+    background-color: rgb(59, 12, 12);
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+header nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #ff6f61;
+    background-color: #333;
+}
+
+.hero {
+    background: url('https://picsum.photos/1200/800') no-repeat center center/cover;
+    color:black;
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.hero button {
+    background-color: #333;
+    color: white;
+    padding: 15px 25px;
+    font-size: 1.2em;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.hero button:hover {
+    background-color: #555;
+    transform: scale(1.1);
+}
+
+.home-intro {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.home-intro h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.home-intro p {
+    font-size: 1.2em;
+}
+
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 60px;
+    text-align: center;
+}
+
+.service-card {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    width: 25%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-card h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    font-size: 1em;
+}
+
+.cta-section {
+    background-color: #333;
+    color: white;
+    padding: 50px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.cta-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.cta-section p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.cta-section button {
+    background-color: #ff6f61;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-section button:hover {
+    background-color: #e2574d;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+}
+
+.modal .close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    float: right;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.modal .close:hover {
+    color: #ff6f61;
+    transform: scale(1.2);
+}
+
+.gallery img {
+    margin: 10px;
+    width: 100%;
+    max-width: 250px;
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+.image-slider {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+}
+
+.image-slider .slides img {
+    width: 100%;
+    display: none;
+}
+
+.image-slider .prev, .image-slider .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.image-slider .prev {
+    left: 0;
+}
+
+.image-slider .next {
+    right: 0;
+}
+
+.image-slider .prev:hover, .image-slider .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+form {
+    display: block;
+    margin: 0 auto;
+    max-width: 400px;
+    text-align: left;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+form button {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    margin-top: 500px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media (max-width: 768px) {
+    header nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .services {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card {
+        width: 80%;
+    }
+
+    .hero, .about, .contact {
+        padding: 30px;
+    }
+
+    .cta-section button {
+        padding: 10px 20px;
+    }
+
+    .gallery img {
+        max-width: 200px;
+    }
+}
